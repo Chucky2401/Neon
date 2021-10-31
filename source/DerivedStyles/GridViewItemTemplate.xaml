@@ -34,7 +34,7 @@
                                     </Grid>
                                     <Viewbox VerticalAlignment="Bottom" HorizontalAlignment="Left"
                                              Name="GameControls">
-                                        <Border Margin="5,50,30,5"
+                                        <Border Margin="30,50,30,5"
                                             CornerRadius="{DynamicResource ControlCornerRadiusSmall}" Padding="1">
                                             <Border.Style>
                                                 <Style TargetType="Border">

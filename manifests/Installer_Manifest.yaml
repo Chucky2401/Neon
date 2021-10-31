@@ -5,7 +5,7 @@ Packages:
     ReleaseDate: 2021-10-31
     PackageUrl: https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/releases/download/1.8/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_8.pthm
     Changelog:
-      - "Ported changes in the original Helium"
+      - "Ported new changes from the original Helium"
       - "General: Animate PlayButton and ContextButton background color transitions"
       - "Details View: Animate info button and edit button opacity transitions"
       - "Grid View: Animate edit button opacity transitions"

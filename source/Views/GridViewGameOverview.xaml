@@ -118,7 +118,7 @@
                                     </Border>
                                     <Border>
                                         <FadeImage x:Name="PART_ImageBackground" Stretch="UniformToFill"
-                                               HorizontalAlignment="Left" VerticalAlignment="Center">
+                                               HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <FadeImage.OpacityMask>
                                                 <LinearGradientBrush StartPoint="0.5, 0.0" EndPoint="0.5, 1.0" >
                                                     <GradientStop Color="Black" Offset="0.75"/>

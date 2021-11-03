@@ -1,5 +1,11 @@
 AddonId: 8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2
 Packages:
+  - Version: 1.8.1
+    RequiredApiVersion: 2.0.0
+    ReleaseDate: 2021-11-03
+    PackageUrl: https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/releases/download/1.8.1/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_8_1.pthm
+    Changelog:
+      - "Centered the background image on the details panel"
   - Version: 1.8
     RequiredApiVersion: 2.0.0
     ReleaseDate: 2021-10-31

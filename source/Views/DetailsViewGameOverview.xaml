@@ -26,57 +26,25 @@
                                     </Border.OpacityMask>
                                     <Grid x:Name="MainGrid" Height="600">
                                         <Grid.Clip>
-                                            <RectangleGeometry Rect="0, 0, 3840, 600" />
+                                            <RectangleGeometry Rect="0, 0, 3840, 800" />
                                         </Grid.Clip>
-                                        <Grid Visibility="Visible">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="6*"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="6*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="6*"/>
-                                                <RowDefinition Height="*"/>
-                                                <RowDefinition Height="6*"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5" >
-                                                <Grid.RenderTransform>
-                                                    <TransformGroup>
-                                                        <ScaleTransform ScaleX="16" ScaleY="16"/>
-                                                        <SkewTransform/>
-                                                        <RotateTransform/>
-                                                        <TranslateTransform/>
-                                                    </TransformGroup>
-                                                </Grid.RenderTransform>
-                                                <FadeImage x:Name="Fade" Visibility="Visible" Grid.Row="1" Grid.Column="1" Source="{Binding Game.DisplayBackgroundImageObject}" Stretch="UniformToFill" 
-                                                           IsBlurEnabled="True" BlurAmount="{Binding ElementName=SizeGridBlur, Path=ActualHeight}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
-                                                    <FadeImage.RenderTransform>
-                                                        <TransformGroup>
-                                                            <ScaleTransform ScaleX="-1" ScaleY="1"/>
-                                                            <SkewTransform/>
-                                                            <RotateTransform Angle="180"/>
-                                                            <TranslateTransform />
-                                                        </TransformGroup>
-                                                    </FadeImage.RenderTransform>
-                                                </FadeImage>
-                                            </Grid>
-                                            <Grid x:Name="SizeGrid" Grid.Row="1" Grid.Column="1" Visibility="Hidden">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="20*"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="20*"/>
-                                                    <RowDefinition Height="*"/>
-                                                </Grid.RowDefinitions>
-                                                <Grid x:Name="SizeGridSecond" Grid.Row="1" Grid.Column="1"/>
-                                                <StackPanel x:Name="SizeGridBlur" Grid.Row="1" Grid.Column="1" MinHeight="5">
-                                                    <Grid Height="1"/>
-                                                    <Grid Height="{Binding ElementName=SizeGridSecond, Path=ActualHeight}"/>
-                                                    <Grid Height="{Binding ElementName=SizeGridSecond, Path=ActualWidth}"/>
-                                                </StackPanel>
-                                            </Grid>
-                                        </Grid>
+                                        <Grid.CacheMode>
+                                            <BitmapCache EnableClearType="False" 
+                                                    RenderAtScale="0.05"
+                                                    SnapsToDevicePixels="False" />
+                                        </Grid.CacheMode>
+                                        <Image Stretch="UniformToFill" Source="{Binding Game.DisplayBackgroundImage, Converter={StaticResource ImageStringToImageConverterCached}}"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
+                                            <Image.Effect>
+                                                <BlurEffect Radius="100" KernelType="Gaussian" RenderingBias="Performance"/>
+                                            </Image.Effect>
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform ScaleX="-1" ScaleY="1" />
+                                                    <RotateTransform Angle="180" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
                                     </Grid>
                                 </Border>
                             </StackPanel>
@@ -93,9 +61,9 @@
                                             <GradientStop Color="Transparent" Offset="1"/>
                                         </LinearGradientBrush>
                                     </Grid.OpacityMask>
-                                    <Border Background="#141414" Height="{Binding ElementName=DetailsTop, Path=ActualHeight}">
-                                        <Border.Style>
-                                            <Style TargetType="Border">
+                                    <Grid Background="#141414" Height="{Binding ElementName=DetailsTop, Path=ActualHeight}">
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Settings DetailsVisibility.BackgroundImage}" Value="False">
@@ -106,9 +74,23 @@
                                                     </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
-                                        </Border.Style>
-                                    </Border>
+                                        </Grid.Style>
+                                    </Grid>
                                     <Border>
+                                        <Border.Style>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                                <Style.Triggers>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{PluginSettings Plugin=BackgroundChanger, Path=HasDataBackground, FallbackValue=False}" Value="True" />
+                                                            <Condition Binding="{PluginSettings Plugin=BackgroundChanger, Path=EnableBackgroundImage, FallbackValue=False}" Value="True" />
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                    </MultiDataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
                                         <FadeImage x:Name="PART_ImageBackground" Stretch="UniformToFill"
                                                HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <FadeImage.OpacityMask>
@@ -119,12 +101,33 @@
                                             </FadeImage.OpacityMask>
                                         </FadeImage>
                                     </Border>
+
+                                    <!-- BackgroundChanger plugin background -->
+                                    <ContentControl x:Name="BackgroundChanger_PluginBackgroundImage"
+                                                    HorizontalAlignment="{DynamicResource DetailsViewBackgroundHorizontalAlignment}"
+                                                    VerticalAlignment="{DynamicResource DetailsViewBackgroundVerticalAlignment}" />
                                 </Grid>
 
                                 <StackPanel Grid.Row="0" Name="DetailsTop" VerticalAlignment="Top">
                                     <Grid Name="HeaderImagesGrid" Height="{Settings CalculatedGameDetailsIndentation}">
-                                        <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" Margin="20,20,30,20"/>
-
+                                        <Border Panel.ZIndex="99">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=EnableVideoPlayer, FallbackValue=False}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControlAlternative" Margin="10" HorizontalAlignment="Left"/>
+                                        </Border>
+                                        <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl"
+                                                        Margin="20,20,30,20"
+                                                        Tag="{DynamicResource DetailsViewAllowUseOfLogos}" 
+                                                        Style="{DynamicResource ControlPanelBoolTagToVisibility}"/>
+                                        
                                         <DockPanel Margin="20,0,30,20" LastChildFill="False" VerticalAlignment="Bottom">
                                             <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
                                                    DockPanel.Dock="Left" Margin="0,0,20,0"
@@ -149,7 +152,7 @@
                                         <Border Padding="20,10,30,10" x:Name="HeaderRow" Background="{DynamicResource DetailsSectionBackgroundBrush}">
                                             <DockPanel>
                                                 <DockPanel HorizontalAlignment="Left"  VerticalAlignment="Center"
-                                                            Margin="0,0,0,0" DockPanel.Dock="Left">
+                                                            Margin="0,0,10,0" DockPanel.Dock="Left">
                                                     <Button Name="PART_ButtonPlayAction"
                                                             MinWidth="189.5" Height="45" Style="{DynamicResource PlayButton}" />
                                                     <Button Name="PART_ButtonContextAction" 
@@ -217,14 +220,14 @@
                                                         </Button.Style>
                                                     </Button>
                                                 </DockPanel>
-                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="30,0,20,0">
+                                                <DockPanel x:Name="PART_ElemLastPlayed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0">
                                                         <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCLastPlayed}"/>
                                                         <TextBlock x:Name="PART_TextLastActivity" Style="{DynamicResource HeaderTextBlock}"/>
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0,0,20,0">
+                                                <DockPanel x:Name="PART_ElemPlayTime" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
 
                                                     <Viewbox Height="25">
                                                         <Canvas Width="256" Height="256" Canvas.Left="0" Canvas.Top="0">
@@ -249,14 +252,14 @@
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0,0,20,0">
+                                                <DockPanel x:Name="PART_ElemCompletionStatus" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">
                                                         <Label Style="{DynamicResource HeaderLabel}" Content="{DynamicResource LOCCompletionStatus}"/>
                                                         <Button x:Name="PART_ButtonCompletionStatus" Opacity="1" Style="{StaticResource PropertyItemButton}" Margin="0" />
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="0,0,20,0">
+                                                <DockPanel DockPanel.Dock="Left" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <DockPanel.Style>
                                                         <Style TargetType="{x:Type DockPanel}">
                                                             <Setter Property="Visibility" Value="Collapsed" />
@@ -363,7 +366,7 @@
                                                     </StackPanel>
                                                 </DockPanel>
 
-                                                <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,0,0">
+                                                <DockPanel DockPanel.Dock="Right" VerticalAlignment="Center" Margin="20,0,0,0">
                                                     <Button x:Name="PART_ButtonEditGame" Focusable="False" Height="32" Width="32"
                                                             FontFamily="{DynamicResource FontIcoFont}" Style="{DynamicResource GameEditButton}" Margin="0,0,10,0"/>
                                                     <ToggleButton Name="PanelToggleButton" Focusable="False" Height="32" Width="32" Style="{DynamicResource PannelToggleButton}" IsChecked="True"/>
@@ -522,6 +525,9 @@
                                                             <Setter Property="Visibility" Value="Collapsed" />
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding Game.Links}" Value="{x:Null}">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Game.Links.Count, TargetNullValue=0}" Value="0">
                                                             <Setter Property="Visibility" Value="Collapsed" />
                                                         </DataTrigger>
                                                     </Style.Triggers>
@@ -728,16 +734,37 @@
                                                                 <DataTrigger Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=EnableVideoPlayer, FallbackValue=False}" Value="False">
                                                                     <Setter Property="Visibility" Value="Collapsed" />
                                                                 </DataTrigger>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=EnableAlternativeDetailsVideoPlayer, FallbackValue=False}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </DataTrigger>
                                                             </Style.Triggers>
                                                         </Style>
                                                     </StackPanel.Style>
                                                     <Label Content="{DynamicResource LOCExtra_Metadata_Loader_VideoLabel}" Style="{DynamicResource FeedSectionLabel}" />
-                                                    <Grid Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
+                                                    <StackPanel Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="45" Margin="0,0,0,10" >
                                                         <Border Style="{DynamicResource OutlineBorder}" />
                                                         <ContentControl x:Name="ExtraMetadataLoader_VideoLoaderControl" Margin="10"/>
-                                                    </Grid>
+                                                    </StackPanel>
                                                 </StackPanel>
 
+                                                <StackPanel Name="NewsFeed" Margin="0,0,0,15">
+                                                    <StackPanel.Style>
+                                                        <Style TargetType="StackPanel">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=NewsViewer, Path=ReviewsAvailable, FallbackValue=False}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </StackPanel.Style>
+                                                    <Label Content="{DynamicResource LOC_NewsViewer_NewsViewerControl_NewsLabel}" Style="{DynamicResource FeedSectionLabel}" />
+                                                    <StackPanel Background="{DynamicResource  LinksContainerBackgroundBrush}" MinHeight="60" Margin="0,0,0,10" >
+                                                        <Border Style="{DynamicResource OutlineBorder}" />
+                                                        <ContentControl x:Name="NewsViewer_NewsViewerControl" Margin="10"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                                
                                             </StackPanel>
 
                                             <StackPanel Grid.Column="2">

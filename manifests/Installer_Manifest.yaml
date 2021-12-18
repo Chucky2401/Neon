@@ -1,25 +1,25 @@
 AddonId: 8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2
 Packages:
-- Version: 1.13
+  - Version: 1.13
     RequiredApiVersion: 2.1.0
     ReleaseDate: 2021-12-18
     PackageUrl: https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/releases/download/1.13/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_13.pthm
     Changelog:
       - "Ported new changes from the original Helium"
-      - 'General: Slight change in popups background color'
+      - "General: Slight change in popups background color"
       - 'Details View: Added support for "News Viewer" extension'
-      - 'Details View: Fix incorrect margins in details header when Last Played field is disabled'
-      - 'Grid View: Fix missing cover show option not showing in grid view when configured'
-      - 'Update to Playnite themes API 2.1.0'
-      - 'Fix main window not being resizable from the side the sidebar is docked to'
-      - 'Details View: Support for Background image extension BackgroundImage control'
-      - 'DetailsView: Fix links panel showing when game links count is 0'
-      - 'Style filter ComboBox'
-      - 'Details View: Fix background image not showing when BackgroundChanger extension is enabled but control is disabled in settings'
-      - 'Grid View: Add support for ExtraMetadataLoader video player control'
-      - 'Grid View: Add support for NewsViewer extension control'
-      - 'General: Adjustments to ThemeModifier variable names'
-      - 'Details View: Add support for ExtraMetadataLoader extension alternative video player'
+      - "Details View: Fix incorrect margins in details header when Last Played field is disabled"
+      - "Grid View: Fix missing cover show option not showing in grid view when configured"
+      - "Update to Playnite themes API 2.1.0"
+      - "Fix main window not being resizable from the side the sidebar is docked to"
+      - "Details View: Support for Background image extension BackgroundImage control"
+      - "DetailsView: Fix links panel showing when game links count is 0"
+      - "Style filter ComboBox"
+      - "Details View: Fix background image not showing when BackgroundChanger extension is enabled but control is disabled in settings"
+      - "Grid View: Add support for ExtraMetadataLoader video player control"
+      - "Grid View: Add support for NewsViewer extension control"
+      - "General: Adjustments to ThemeModifier variable names"
+      - "Details View: Add support for ExtraMetadataLoader extension alternative video player"
   - Version: 1.8.1
     RequiredApiVersion: 2.0.0
     ReleaseDate: 2021-11-03

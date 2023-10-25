@@ -3,9 +3,9 @@
 ![DownloadCountLatest](https://img.shields.io/github/downloads/XenorPLxx/Helium-Enhanced-Grid-Mod/latest/total?style=for-the-badge)
 ![License](https://img.shields.io/github/license/XenorPLxx/Helium-Enhanced-Grid-Mod?style=for-the-badge)
 
-# Helium Enhanced Grid Mod
+# Neon 
 
-Project based on [Helium by darklinkpower](https://github.com/darklinkpower/Helium) for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode.
+Neon (formerly 'Helium - Enhanced Grid Mod') is a project based on [Helium by darklinkpower](https://github.com/darklinkpower/Helium) for [Playnite](https://github.com/JosefNemec/Playnite) Desktop Mode.
 
 ## Relevant settings
 

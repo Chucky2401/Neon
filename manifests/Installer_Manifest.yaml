@@ -3,7 +3,7 @@ Packages:
   - Version: 1.13
     RequiredApiVersion: 2.1.0
     ReleaseDate: 2021-12-18
-    PackageUrl: https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/releases/download/1.13/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_13.pthm
+    PackageUrl: https://github.com/XenorPLxx/Neon/releases/download/1.13/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_13.pthm
     Changelog:
       - "Ported new changes from the original Helium"
       - "General: Slight change in popups background color"
@@ -23,13 +23,13 @@ Packages:
   - Version: 1.8.1
     RequiredApiVersion: 2.0.0
     ReleaseDate: 2021-11-03
-    PackageUrl: https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/releases/download/1.8.1/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_8_1.pthm
+    PackageUrl: https://github.com/XenorPLxx/Neon/releases/download/1.8.1/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_8_1.pthm
     Changelog:
       - "Centered the background image on the details panel"
   - Version: 1.8
     RequiredApiVersion: 2.0.0
     ReleaseDate: 2021-10-31
-    PackageUrl: https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/releases/download/1.8/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_8.pthm
+    PackageUrl: https://github.com/XenorPLxx/Neon/releases/download/1.8/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_8.pthm
     Changelog:
       - "Ported new changes from the original Helium"
       - "General: Animate PlayButton and ContextButton background color transitions"
@@ -50,7 +50,7 @@ Packages:
   - Version: 1.6
     RequiredApiVersion: 2.0.0
     ReleaseDate: 2021-10-19
-    PackageUrl: https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/releases/download/1.6/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_6.pthm
+    PackageUrl: https://github.com/XenorPLxx/Neon/releases/download/1.6/8b15c46a-90c2-4fe5-9ebb-1ab25ba7fcb2_1_6.pthm
     Changelog:
       - "Forked from Helium by darklinkpower"
       - "Modified Grid view to better utilize displays with higher horizontal pixel count"

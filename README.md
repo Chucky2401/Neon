@@ -1,7 +1,7 @@
-![DownloadCountTotal](https://img.shields.io/github/downloads/XenorPLxx/Helium-Enhanced-Grid-Mod/total?label=total%20downloads&style=for-the-badge)
-![LatestVersion](https://img.shields.io/github/v/tag/XenorPLxx/Helium-Enhanced-Grid-Mod?label=Latest%20version&style=for-the-badge)
-![DownloadCountLatest](https://img.shields.io/github/downloads/XenorPLxx/Helium-Enhanced-Grid-Mod/latest/total?style=for-the-badge)
-![License](https://img.shields.io/github/license/XenorPLxx/Helium-Enhanced-Grid-Mod?style=for-the-badge)
+![DownloadCountTotal](https://img.shields.io/github/downloads/XenorPLxx/Neon/total?label=total%20downloads&style=for-the-badge)
+![LatestVersion](https://img.shields.io/github/v/tag/XenorPLxx/Neon?label=Latest%20version&style=for-the-badge)
+![DownloadCountLatest](https://img.shields.io/github/downloads/XenorPLxx/Neon/latest/total?style=for-the-badge)
+![License](https://img.shields.io/github/license/XenorPLxx/Neon?style=for-the-badge)
 
 # Neon 
 
@@ -13,17 +13,17 @@ Keep in mind that a similar effect can be achieved by using original [Helium](ht
 
 Settings used to take the preview screenshots:
 
-![settings-1](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/settings-1.png)
+![settings-1](https://github.com/XenorPLxx/Neon/raw/master/screenshots/settings-1.png)
 
-![settings-2](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/settings-2.png)
+![settings-2](https://github.com/XenorPLxx/Neon/raw/master/screenshots/settings-2.png)
 
-![settings-3](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/settings-3.png)
+![settings-3](https://github.com/XenorPLxx/Neon/raw/master/screenshots/settings-3.png)
 
-![settings-4](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/settings-4.png)
+![settings-4](https://github.com/XenorPLxx/Neon/raw/master/screenshots/settings-4.png)
 
 ## Screenshots
 
-![Screenshot](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/screenshot_01.jpg)
+![Screenshot](https://github.com/XenorPLxx/Neon/raw/master/screenshots/screenshot_01.jpg)
 
 <!-- # Helium
 

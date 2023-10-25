@@ -9,6 +9,8 @@ Neon (formerly 'Helium - Enhanced Grid Mod') is a project based on [Helium by da
 
 ## Relevant settings
 
+Keep in mind that similar effect can be achieved by using original Helium with new [Themes DetailsView To GridView Converter](https://playnite.link/addons.html#ThemesDetailsViewToGridViewConverter_ef8a7226-eedc-478d-a506-92ee6c088aa3) add-on and it'll be recommended way for most users.
+
 Settings used to take the preview screenshots:
 
 ![settings-1](https://github.com/XenorPLxx/Helium-Enhanced-Grid-Mod/raw/master/screenshots/settings-1.png)

@@ -7,6 +7,8 @@ Constants:
   - DetailsViewBackgroundHorizontalAlignment: "Horizontal alignment of the background image"
   - DetailsViewAllowUseOfLogos: "Allow use of Extra Metadata Loader logos"
   - DetailsViewShowHltbDataGrid: "Show HowLongToBeat data grid"
+  - GameActivityChartTimeHeight(100,500): "Height of Game Activity Plugin chart time"
+  - GameActivityChartLogHeight(100,500): "Height of Game Activity Plugin chart log"
   - "Grid View"
   - GridViewAllowUseOfLogos: "Allow use of Extra Metadata Loader logos"
   - GridViewShowHltbDataGrid: "Show HowLongToBeat data grid"
